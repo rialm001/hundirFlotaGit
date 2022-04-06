@@ -53,7 +53,16 @@ public class GestorHF  extends Observable{
 			
 			System.out.println(" " + Portaaviones.restarBarco());
 			setChanged();
-			notifyObservers();
+			notifyObservers();//mandar aqui el nuevo valor de cantidad portaaviones
 		}
+		
+		public void comprobarCasilla()
+		{
+			
+			System.out.println("b");
+			
+		setChanged();
+		notifyObservers();}
+		
 
 	}	

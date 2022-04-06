@@ -15,4 +15,7 @@
     <fullyQualifiedTypeName name="java.lang.Iterable"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="modeloHF.Portaaviones"/>
+    <fullyQualifiedTypeName name="modeloHF.Submarino"/>
+    <fullyQualifiedTypeName name="modeloHF.Destructor"/>
+    <fullyQualifiedTypeName name="modeloHF.Fragata"/>
 </qualifiedTypeNameHistroy>

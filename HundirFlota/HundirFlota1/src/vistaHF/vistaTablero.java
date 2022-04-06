@@ -51,6 +51,7 @@ public class vistaTablero extends JFrame implements Observer {
 	private Controlador controlador = null;
 	private Controlador2 controladorCAS = null;
 	private Controlador3 controladorPORTA = null;
+	private Controlador4 controladorCasilla = null;
 	private JPanel panelINFO;
 	private JButton btnTIENDA;
 	private JLabel FLOTA;
@@ -338,7 +339,7 @@ public class vistaTablero extends JFrame implements Observer {
 				//coordenadas
 				int  Xx = i; 
 				int  Yy = j;				
-			
+	
 				//creamos el JLabel
 				JButton btt = cbt3();
 											
@@ -346,8 +347,8 @@ public class vistaTablero extends JFrame implements Observer {
 				lista.add(btt);
 				
 				//accion al hacer clic
-				 btt.addActionListener(getControladorCAS());
-																					
+				btt.addActionListener(getControladorCasilla());
+				
 				panel.setLayout(new GridLayout(10, 10, 0, 0));
 				panel.add(btt, BorderLayout.CENTER);
 			}
@@ -361,6 +362,13 @@ public class vistaTablero extends JFrame implements Observer {
 		}
 		return controladorPORTA;
 	}		
+	
+	private Controlador4 getControladorCasilla() {
+		if (controladorCasilla == null) {
+			controladorCasilla = new Controlador4();
+		}
+		return controladorCasilla;
+	}	
 	
 			private Controlador2 getControladorCAS() {
 				if (controladorCAS == null) {
@@ -394,6 +402,14 @@ public class vistaTablero extends JFrame implements Observer {
 			}
 			
 			private class Controlador3 implements ActionListener {
+				//Tras pulsar el botón, abre una nueva pantalla
+				public void actionPerformed(ActionEvent e) {
+						
+					GestorHF.getGestorHF().restarBarcoPort();
+				}
+			}
+			
+			private class Controlador4 implements ActionListener {
 				//Tras pulsar el botón, abre una nueva pantalla
 				public void actionPerformed(ActionEvent e) {
 						
