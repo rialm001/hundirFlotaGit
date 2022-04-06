@@ -1,0 +1,147 @@
+package vistaHF;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JButton;
+import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
+import net.miginfocom.swing.MigLayout;
+
+public class vistaTablero extends JFrame {
+
+	private JPanel contentPane;
+	private JPanel panelCENTRO;
+	private JPanel panelARRIBA;
+	private JPanel panelIZQUIERDA;
+	private JLabel lblJUG;
+	private JLabel lblPC;
+	private JPanel panelCentroIDRCH;
+	private JPanel panelCentroIZQ;
+	private JPanel panelABAJO;
+	private JPanel panelFLOTA;
+	private JPanel panelINFOJUG;
+	private JPanel panelARMAMENTO;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					vistaTablero frame = new vistaTablero();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public vistaTablero() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new BorderLayout(0, 0));
+		contentPane.add(getPanelCENTRO(), BorderLayout.CENTER);
+		contentPane.add(getPanelARRIBA(), BorderLayout.NORTH);
+		contentPane.add(getPanelIZQUIERDA(), BorderLayout.EAST);
+		contentPane.add(getPanel_2(), BorderLayout.SOUTH);
+	}
+	private JPanel getPanelCENTRO() {
+		if (panelCENTRO == null) {
+			panelCENTRO = new JPanel();
+			panelCENTRO.setLayout(new GridLayout(1, 0, 0, 0));
+			panelCENTRO.add(getPanelCentroIZQ());
+			panelCENTRO.add(getPanelCentroIDRCH());
+		}
+		return panelCENTRO;
+	}
+	private JPanel getPanelARRIBA() {
+		if (panelARRIBA == null) {
+			panelARRIBA = new JPanel();
+			panelARRIBA.setLayout(new GridLayout(1, 0, 0, 0));
+			panelARRIBA.add(getLblJUG());
+			panelARRIBA.add(getLblPC());
+		}
+		return panelARRIBA;
+	}
+	private JPanel getPanelIZQUIERDA() {
+		if (panelIZQUIERDA == null) {
+			panelIZQUIERDA = new JPanel();
+		}
+		return panelIZQUIERDA;
+	}
+	private JLabel getLblJUG() {
+		if (lblJUG == null) {
+			lblJUG = new JLabel("TABLERO JUGADOR");
+			lblJUG.setForeground(Color.BLUE);
+			lblJUG.setFont(new Font("Tahoma", Font.BOLD, 12));
+			lblJUG.setHorizontalAlignment(SwingConstants.CENTER);
+		}
+		return lblJUG;
+	}
+	private JLabel getLblPC() {
+		if (lblPC == null) {
+			lblPC = new JLabel("TABLERO CONTRINCANTE");
+			lblPC.setForeground(Color.BLUE);
+			lblPC.setFont(new Font("Tahoma", Font.BOLD, 12));
+			lblPC.setHorizontalAlignment(SwingConstants.CENTER);
+		}
+		return lblPC;
+	}
+	private JPanel getPanelCentroIDRCH() {
+		if (panelCentroIDRCH == null) {
+			panelCentroIDRCH = new JPanel();
+		}
+		return panelCentroIDRCH;
+	}
+	private JPanel getPanelCentroIZQ() {
+		if (panelCentroIZQ == null) {
+			panelCentroIZQ = new JPanel();
+		}
+		return panelCentroIZQ;
+	}
+	private JPanel getPanel_2() {
+		if (panelABAJO == null) {
+			panelABAJO = new JPanel();
+			panelABAJO.setLayout(new MigLayout("", "[142px][142px][142px]", "[10px]"));
+			panelABAJO.add(getPanel_1_1(), "cell 0 0,grow");
+			panelABAJO.add(getPanel_2_1(), "cell 1 0,grow");
+			panelABAJO.add(getPanel_3(), "cell 2 0,grow");
+		}
+		return panelABAJO;
+	}
+	private JPanel getPanel_1_1() {
+		if (panelFLOTA == null) {
+			panelFLOTA = new JPanel();
+		}
+		return panelFLOTA;
+	}
+	private JPanel getPanel_2_1() {
+		if (panelINFOJUG == null) {
+			panelINFOJUG = new JPanel();
+		}
+		return panelINFOJUG;
+	}
+	private JPanel getPanel_3() {
+		if (panelARMAMENTO == null) {
+			panelARMAMENTO = new JPanel();
+		}
+		return panelARMAMENTO;
+	}
+}

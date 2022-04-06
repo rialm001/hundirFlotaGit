@@ -1,0 +1,9 @@
+package modeloHF;
+
+public class PC {
+
+	public PC() {
+		// TODO Esbozo de constructor generado automáticamente
+	}
+
+}

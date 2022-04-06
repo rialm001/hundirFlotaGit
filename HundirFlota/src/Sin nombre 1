@@ -1,0 +1,76 @@
+public void crearCasillas() {
+			
+			//cremos el tablero con las casillas
+			for(int i=0; i<10;i++) {
+				for(int j=0; j<10;j++) {
+								
+					//creamos el JLabel
+					JLabel bttJ = cbt();
+					JLabel bttPC = cbt();
+											
+					//añadimos JLabel al array;
+					listaJ.add(bttJ);
+					listaPC.add(bttPC);
+					
+					//añadimos al panel
+					panelJUG.setLayout(new GridLayout(10, 10, 0, 0));
+					panelPC.setLayout(new GridLayout(10, 10, 0, 0));
+					panelJUG.add(bttJ, BorderLayout.CENTER);
+					panelPC.add(bttPC, BorderLayout.CENTER);
+					
+					//accion al hacer clic
+					 btt.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+								
+								//ponemos las coordenadas del tablero en el label coordenadas
+								coordenadas.setText("X: "+X + "  Y: " +Y);
+								
+								//miramos si hay alguno rojo
+								boolean loEs= false;
+								for(int l=0; l<dim*dim;l++ ) //recorro el array
+								{
+									//System.out.println("Color label : " +lista.get(l).getBackground());
+									if (lista.get(l).getBackground().equals(Color.red))
+									{
+										loEs = true;
+									}
+								}	
+								
+								//cogemos el label clicado 
+								JLabel labelClicado = (JLabel) e.getComponent();
+								
+							/*	//COGEMOS COORDENADAS
+								System.out.println( e.getLocationOnScreen());
+								double x = labelClicado.getX();
+							    double y = labelClicado.getY();
+								System.out.println("x:  " + x +"y: " +y );
+								
+								*/
+								
+								//conseguimos la coordenada del label clicado
+								int coord = lista.indexOf(labelClicado);
+								System.out.println("posicion array : " +coord);
+								//System.out.println("Coordenada: " +labelClicado.getHorizontalAlignment()  +" , " + labelClicado.getVerticalAlignment());
+								
+								//dark grey 64,64,64
+								//red 255,0,0
+								
+								//hacemos que solo se pueda pintar un unico label
+								
+								if(loEs == false)
+								{
+									if (labelClicado.getBackground().equals(Color.darkGray))
+									{labelClicado.setBackground(Color.red);}
+								}
+								else 
+								{	if(labelClicado.getBackground().equals(Color.red))
+										{labelClicado.setBackground(Color.darkGray);}
+									else System.out.println("Solo puedes pintar una casilla");
+								}
+					 }
+
+				}
+			}
+		
+		}	

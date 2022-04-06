@@ -1,0 +1,22 @@
+package modeloHF;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Tablero {
+
+	private ArrayList<Casilla> lista;
+	private ListaBarcos barcos;
+		
+	
+	public Tablero() {
+		// TODO Esbozo de constructor generado automáticamente
+	}
+
+	
+	private Iterator<Casilla> getIterator()
+	{ return  lista.iterator();
+	
+	
+	
+}

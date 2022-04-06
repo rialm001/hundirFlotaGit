@@ -1,0 +1,52 @@
+package modeloHF;
+
+import java.util.Observable;
+
+import vistaHF.vistaTablero;
+
+@SuppressWarnings("deprecation")
+public class GestorHF  extends Observable{
+		
+		private static GestorHF mGestorHF = new GestorHF();
+		
+		
+		private GestorHF ()
+		{
+			setChanged();
+			notifyObservers();
+			
+			//Mostrar información del modelo
+						
+		}
+		
+		public static GestorHF getGestorHF() {
+			return mGestorHF;
+		}
+		
+		public void actualizarNBarcos()
+		{
+			
+			
+			setChanged();
+			notifyObservers();
+		}
+		
+		public void tablero ()
+		{
+			new vistaTablero();
+			setChanged();
+			notifyObservers();
+		}
+		
+		
+	/*	public void ponerVerde() {
+			if (!estaVerde()) {
+				cont = PERIODO;
+				estaVerde = true;
+				setChanged();
+				notifyObservers();
+			}
+		}*/
+		
+
+	}	

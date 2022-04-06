@@ -1,0 +1,412 @@
+package vistaHF;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import javax.swing.JSplitPane;
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.JTextField;
+import java.awt.GridBagLayout;
+import javax.swing.JButton;
+import java.awt.Window.Type;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.JLabel;
+import java.awt.FlowLayout;
+import javax.swing.SwingConstants;
+
+public class tableroHF extends JFrame {
+
+	private JPanel contentPane;
+	private JPanel panelAbajo;
+	private JPanel panelFLOTA;
+	private JButton btnTIENDA;
+	private JPanel panelArriba;
+	private JLabel lblJugador;
+	private JLabel lblPC;
+	private JLabel lblFLOTA;
+	private JPanel panelARMAMENTO;
+	private JLabel lblARMAS;
+	ArrayList <JLabel > listaJ = new ArrayList <JLabel>() ;
+	ArrayList <JLabel > listaPC = new ArrayList <JLabel>() ;
+	private JPanel panelBARCOS;
+	private JPanel panelARMAS;
+	private JLabel lblPORTAAVIONES;
+	private JLabel nPorta;
+	private JLabel lblSubmarino;
+	private JLabel nSub;
+	private JLabel lblDestructor;
+	private JLabel lblRadar;
+	private JLabel nRadar;
+	private JLabel lblBomba;
+	private JLabel nBomba;
+	private JLabel lblNewLabel_9;
+	private JPanel panelCENTRO;
+	private JPanel panelJUG;
+	private JPanel panelPC;
+	private JLabel nDes;
+	private JLabel nMisil;
+	private JLabel lblFragata;
+	private JLabel nFra;
+	private JLabel lblEscudo;
+	private JLabel nEscudo;
+	private int nP =1;
+	private int nS =2;
+	private int nD = 3;
+	private int nF = 4;
+
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					tableroHF frame = new tableroHF();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public tableroHF() {
+		setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 12));
+		setForeground(Color.RED);
+		setTitle("HUNDIR LA FLOTA");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(200, 200, 841, 527);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new BorderLayout(0, 0));
+		contentPane.add(getPanelAbajo(), BorderLayout.SOUTH);
+		contentPane.add(getPanelArriba(), BorderLayout.NORTH);
+		contentPane.add(getPanelCENTRO(), BorderLayout.CENTER);
+		this.crearCasillasJug();
+		this.crearCasillasPC();
+	}
+	private JPanel getPanelAbajo() {
+		if (panelAbajo == null) {
+			panelAbajo = new JPanel();
+			panelAbajo.setLayout(new GridLayout(0, 3, 0, 0));
+			panelAbajo.add(getPanelFLOTA());
+			panelAbajo.add(getBtnTIENDA());
+			panelAbajo.add(getPanelARMAMENTO());
+		}
+		return panelAbajo;
+	}
+	private JPanel getPanelFLOTA() {
+		if (panelFLOTA == null) {
+			panelFLOTA = new JPanel();
+			panelFLOTA.setLayout(new GridLayout(0, 1, 0, 0));
+			panelFLOTA.add(getLblFLOTA());
+			panelFLOTA.add(getPanelBARCOS());
+		}
+		return panelFLOTA;
+	}
+	private JButton getBtnTIENDA() {
+		if (btnTIENDA == null) {
+			btnTIENDA = new JButton("TIENDA");
+			btnTIENDA.setBackground(Color.ORANGE);
+			btnTIENDA.setFont(new Font("Tahoma", Font.BOLD, 14));
+			btnTIENDA.setForeground(Color.BLACK);
+			
+		}
+		return btnTIENDA;
+	}
+	private JPanel getPanelArriba() {
+		if (panelArriba == null) {
+			panelArriba = new JPanel();
+			panelArriba.setLayout(new GridLayout(0, 2, 2, 2));
+			panelArriba.add(getLblJugador());
+			panelArriba.add(getLblPC());
+		}
+		return panelArriba;
+	}
+	private JLabel getLblJugador() {
+		if (lblJugador == null) {
+			lblJugador = new JLabel("TABLERO JUGADOR");
+			lblJugador.setForeground(Color.BLUE);
+			lblJugador.setHorizontalAlignment(SwingConstants.CENTER);
+			lblJugador.setFont(new Font("Tahoma", Font.BOLD, 25
+					));
+		}
+		return lblJugador;
+	}
+	private JLabel getLblPC() {
+		if (lblPC == null) {
+			lblPC = new JLabel("TABLERO PC");
+			lblPC.setForeground(Color.blue);
+			lblPC.setHorizontalAlignment(SwingConstants.CENTER);
+			lblPC.setFont(new Font("Tahoma", Font.BOLD, 25));
+		}
+		return lblPC;
+	}
+	private JLabel getLblFLOTA() {
+		if (lblFLOTA == null) {
+			lblFLOTA = new JLabel("FLOTA");
+			lblFLOTA.setForeground(Color.BLUE);
+			lblFLOTA.setHorizontalAlignment(SwingConstants.CENTER);
+			lblFLOTA.setFont(new Font("Tahoma", Font.BOLD, 15));
+		}
+		return lblFLOTA;
+	}
+	private JPanel getPanelARMAMENTO() {
+		if (panelARMAMENTO == null) {
+			panelARMAMENTO = new JPanel();
+			panelARMAMENTO.setLayout(new GridLayout(0, 1, 0, 0));
+			panelARMAMENTO.add(getLblARMAS());
+			panelARMAMENTO.add(getPanelARMAS());
+		}
+		return panelARMAMENTO;
+	}
+	private JLabel getLblARMAS() {
+		if (lblARMAS == null) {
+			lblARMAS = new JLabel("ARMAMENTO");
+			lblARMAS.setForeground(Color.BLUE);
+			lblARMAS.setHorizontalAlignment(SwingConstants.CENTER);
+			lblARMAS.setFont(new Font("Tahoma", Font.BOLD, 15));
+		}
+		return lblARMAS;
+	}
+	
+	
+	private JLabel cbt() 
+	{ //parámetros de entrada 
+		
+		JLabel btn = new JLabel(); //texto del botón
+		btn.setBorder(BorderFactory.createLineBorder(Color.white));
+		btn.setOpaque(true);
+		btn.setBackground(Color.lightGray);
+		return btn; 
+	}
+	
+		public void crearCasillasJug() {
+			
+			//cremos el tablero con las casillas
+			for(int i=0; i<10;i++) {
+				for(int j=0; j<10;j++) {
+						
+					//creamos el label
+					JLabel btt = cbt();
+					
+					//añadimos los labels al panel
+					panelJUG.setLayout(new GridLayout(10, 10, 0, 0));
+					panelJUG.add(btt, BorderLayout.CENTER);
+					
+					
+					//accion al hacer clic
+					 btt.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+															
+								//cogemos el label clicado 
+								JLabel labelClicado = (JLabel) e.getComponent();
+																
+									if (labelClicado.getBackground().equals(Color.lightGray))
+									{labelClicado.setBackground(Color.blue);}
+								}}
+
+			);	}
+			}
+			}
+		public void crearCasillasPC() {
+			
+			//cremos el tablero con las casillas
+			for(int i=0; i<10;i++) {
+				for(int j=0; j<10;j++) {
+						
+					//creamos el label
+					JLabel btt = cbt();
+					
+					//añadimos los labels al panel
+					panelPC.setLayout(new GridLayout(10, 10, 0, 0));
+					panelPC.add(btt, BorderLayout.CENTER);
+					
+					
+					//accion al hacer clic
+					 btt.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+															
+								//cogemos el label clicado 
+								JLabel labelClicado = (JLabel) e.getComponent();
+																
+									if (labelClicado.getBackground().equals(Color.lightGray))
+									{labelClicado.setBackground(Color.blue);}
+								}}
+
+			);	}
+			}
+			}
+		
+	private JPanel getPanelBARCOS() {
+		if (panelBARCOS == null) {
+			panelBARCOS = new JPanel();
+			panelBARCOS.setLayout(new GridLayout(0, 2, 0, 0));
+			panelBARCOS.add(getLblPORTAAVIONES());
+			panelBARCOS.add(getNPorta());
+			panelBARCOS.add(getLblSubmarino());
+			panelBARCOS.add(getNSub());
+			panelBARCOS.add(getLblDestructor());
+			panelBARCOS.add(getNDes());
+			panelBARCOS.add(getLblFragata());
+			panelBARCOS.add(getLabel_1_1());
+		}
+		return panelBARCOS;
+	}
+	private JPanel getPanelARMAS() {
+		if (panelARMAS == null) {
+			panelARMAS = new JPanel();
+			panelARMAS.setLayout(new GridLayout(0, 2, 0, 0));
+			panelARMAS.add(getLblRadar());
+			panelARMAS.add(getNRadar());
+			panelARMAS.add(getLblBomba());
+			panelARMAS.add(getNBomba());
+			panelARMAS.add(getLblNewLabel_9());
+			panelARMAS.add(getNMisil());
+			panelARMAS.add(getLabel_2());
+			panelARMAS.add(getLabel_3());
+		}
+		return panelARMAS;
+	}
+	private JLabel getLblPORTAAVIONES() {
+		if (lblPORTAAVIONES == null) {
+			lblPORTAAVIONES = new JLabel("Portaaviones");
+			lblPORTAAVIONES.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					
+					
+				}
+			});
+		}
+		return lblPORTAAVIONES;
+	}
+	private JLabel getNPorta() {
+		if (nPorta == null) {
+			nPorta = new JLabel(" " +nP);
+		}
+		return nPorta;
+	}
+	private JLabel getLblSubmarino() {
+		if (lblSubmarino == null) {
+			lblSubmarino = new JLabel("Submarino");
+		}
+		return lblSubmarino;
+	}
+	private JLabel getNSub() {
+		if (nSub == null) {
+			nSub = new JLabel(" " +nS);
+		}
+		return nSub;
+	}
+	private JLabel getLblDestructor() {
+		if (lblDestructor == null) {
+			lblDestructor = new JLabel("Destructor");
+		}
+		return lblDestructor;
+	}
+	private JLabel getLblRadar() {
+		if (lblRadar == null) {
+			lblRadar = new JLabel("Radar");
+		}
+		return lblRadar;
+	}
+	private JLabel getNRadar() {
+		if (nRadar == null) {
+			nRadar = new JLabel("5");
+		}
+		return nRadar;
+	}
+	private JLabel getLblBomba() {
+		if (lblBomba == null) {
+			lblBomba = new JLabel("Bomba");
+		}
+		return lblBomba;
+	}
+	private JLabel getNBomba() {
+		if (nBomba == null) {
+			nBomba = new JLabel("10");
+		}
+		return nBomba;
+	}
+	private JLabel getLblNewLabel_9() {
+		if (lblNewLabel_9 == null) {
+			lblNewLabel_9 = new JLabel("Misil");
+		}
+		return lblNewLabel_9;
+	}
+	private JPanel getPanelCENTRO() {
+		if (panelCENTRO == null) {
+			panelCENTRO = new JPanel();
+			panelCENTRO.setLayout(new GridLayout(0, 2, 0, 0));
+			panelCENTRO.add(getPanelJUG());
+			panelCENTRO.add(getPanelPC());
+		}
+		return panelCENTRO;
+	}
+	private JPanel getPanelJUG() {
+		if (panelJUG == null) {
+			panelJUG = new JPanel();
+		}
+		return panelJUG;
+	}
+	private JPanel getPanelPC() {
+		if (panelPC == null) {
+			panelPC = new JPanel();
+		}
+		return panelPC;
+	}
+	private JLabel getNDes() {
+		if (nDes == null) {
+			nDes = new JLabel("3");
+		}
+		return nDes;
+	}
+	private JLabel getNMisil() {
+		if (nMisil == null) {
+			nMisil = new JLabel("5");
+		}
+		return nMisil;
+	}
+	private JLabel getLblFragata() {
+		if (lblFragata == null) {
+			lblFragata = new JLabel("Fragata");
+		}
+		return lblFragata;
+	}
+	private JLabel getLabel_1_1() {
+		if (nFra == null) {
+			nFra = new JLabel("4");
+		}
+		return nFra;
+	}
+	private JLabel getLabel_2() {
+		if (lblEscudo == null) {
+			lblEscudo = new JLabel("Escudo");
+		}
+		return lblEscudo;
+	}
+	private JLabel getLabel_3() {
+		if (nEscudo == null) {
+			nEscudo = new JLabel("2");
+		}
+		return nEscudo;
+	}
+}

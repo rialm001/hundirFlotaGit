@@ -1,0 +1,9 @@
+package modeloHF;
+
+public class Flota {
+
+	public Flota() {
+		// TODO Esbozo de constructor generado automáticamente
+	}
+
+}

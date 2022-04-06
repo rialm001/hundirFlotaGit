@@ -1,0 +1,12 @@
+package modeloHF;
+
+public class Destructor {
+	
+	private static final int cant = 3;
+	private static final int longi = 2;
+	private static final int costeReparacion = 2000;
+	
+	
+	
+
+}

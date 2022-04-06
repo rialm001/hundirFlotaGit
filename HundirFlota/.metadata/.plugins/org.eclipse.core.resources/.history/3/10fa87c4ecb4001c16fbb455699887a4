@@ -1,0 +1,13 @@
+package modeloHF;
+
+public interface Jugador {
+
+	private Flota flota;
+	private Tablero tablero;
+	private final int uniBarcos = 10;
+	
+		
+	public void disparar() {}
+	
+	
+}

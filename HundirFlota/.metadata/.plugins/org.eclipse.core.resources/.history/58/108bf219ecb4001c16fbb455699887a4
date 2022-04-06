@@ -1,0 +1,9 @@
+package modeloHF;
+
+public class Jugador {
+
+	public Jugador() {
+		// TODO Esbozo de constructor generado automáticamente
+	}
+
+}

@@ -1,0 +1,27 @@
+package modeloHF;
+
+public class Casilla {
+	
+	
+	private int posicion;
+	private TipoEstado estado;
+	
+	private void Casilla()
+	{}
+	
+	public int getPosicion()
+	{return this.posicion;}
+	
+	public void setEstado(TipoEstado pEstado)
+	{
+		estado = pEstado;
+		
+	}
+	
+	
+	
+	
+	
+	
+
+}

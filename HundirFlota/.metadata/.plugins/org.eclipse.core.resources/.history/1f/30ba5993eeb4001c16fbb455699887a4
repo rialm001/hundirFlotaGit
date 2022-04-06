@@ -1,0 +1,9 @@
+package modeloHF;
+
+public class Humano {
+
+	public Humano() {
+		// TODO Esbozo de constructor generado automáticamente
+	}
+
+}

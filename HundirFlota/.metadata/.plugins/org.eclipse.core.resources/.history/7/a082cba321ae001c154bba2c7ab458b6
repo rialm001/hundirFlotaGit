@@ -1,0 +1,19 @@
+package ppalHF;
+
+	import modeloHF.GestorHF;
+	import vistaHF.tableroHF;
+	import vistaHF.tiendaHF;
+	
+
+	public class principalHF {
+		public static void main(String[] args) {
+			
+			//MODELO//
+		//	GestorSemaforos.getGestorSemaforos();
+			
+			//VISTA//
+		//	SemaforoCoches sc = new SemaforoCoches();
+		//	SemaforoPeatones sp = new SemaforoPeatones();
+		}
+	}
+

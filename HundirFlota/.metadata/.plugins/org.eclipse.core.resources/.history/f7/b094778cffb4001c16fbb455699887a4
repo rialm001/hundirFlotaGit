@@ -1,0 +1,17 @@
+package modeloHF;
+
+public class Radar {
+	
+	
+	private static final int cant = 1;
+	private static final int coste = 500;
+	private static final int unidEnTienda = 3;
+	
+	
+	
+	
+	
+	
+	
+
+}

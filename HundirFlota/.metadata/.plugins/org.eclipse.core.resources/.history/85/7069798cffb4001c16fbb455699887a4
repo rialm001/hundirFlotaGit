@@ -1,0 +1,11 @@
+package modeloHF;
+
+public class Escudo {
+
+	private static final int cant = 2;
+	private static final int coste = 1000;
+	private static final int unidEnTienda = 2;
+	
+	
+	
+}

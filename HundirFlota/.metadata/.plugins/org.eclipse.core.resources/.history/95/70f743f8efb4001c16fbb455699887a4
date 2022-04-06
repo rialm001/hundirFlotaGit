@@ -1,0 +1,9 @@
+package modeloHF;
+
+public class Tablero {
+
+	public Tablero() {
+		// TODO Esbozo de constructor generado automáticamente
+	}
+
+}

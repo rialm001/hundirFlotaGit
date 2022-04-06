@@ -1,0 +1,18 @@
+package modeloHF;
+
+public class Casilla {
+	
+	
+	private int posicion;
+	private TipoEstado estado;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

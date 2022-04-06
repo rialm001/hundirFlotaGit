@@ -1,0 +1,411 @@
+package vistaHF;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import javax.swing.JSplitPane;
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.JTextField;
+import java.awt.GridBagLayout;
+import javax.swing.JButton;
+import java.awt.Window.Type;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.JLabel;
+import java.awt.FlowLayout;
+import javax.swing.SwingConstants;
+
+public class tableroHF extends JFrame {
+
+	private JPanel contentPane;
+	private JPanel panelAbajo;
+	private JPanel panelFLOTA;
+	private JButton btnTIENDA;
+	private JPanel panelArriba;
+	private JLabel lblJugador;
+	private JLabel lblPC;
+	private JLabel lblFLOTA;
+	private JPanel panelARMAMENTO;
+	private JLabel lblARMAS;
+	ArrayList <JLabel > listaJ = new ArrayList <JLabel>() ;
+	ArrayList <JLabel > listaPC = new ArrayList <JLabel>() ;
+	private JPanel panelBARCOS;
+	private JPanel panelARMAS;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_3;
+	private JLabel lblNewLabel_4;
+	private JLabel lblNewLabel_5;
+	private JLabel lblNewLabel_6;
+	private JLabel lblNewLabel_7;
+	private JLabel lblNewLabel_8;
+	private JLabel lblNewLabel_9;
+	private JPanel panelCENTRO;
+	private JPanel panelJUG;
+	private JPanel panelPC;
+	private JLabel label;
+	private JLabel lblNewLabel_10;
+	private JPanel panel;
+	private JLabel lblNewLabel_11;
+	private JLabel label_1;
+	private JLabel lblNewLabel_12;
+
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					tableroHF frame = new tableroHF();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public tableroHF() {
+		setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 12));
+		setForeground(Color.RED);
+		setTitle("HUNDIR LA FLOTA");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(200, 200, 841, 527);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new BorderLayout(0, 0));
+		contentPane.add(getPanelAbajo(), BorderLayout.SOUTH);
+		contentPane.add(getPanelArriba(), BorderLayout.NORTH);
+		contentPane.add(getPanelCENTRO(), BorderLayout.CENTER);
+		this.crearCasillasJug();
+		this.crearCasillasPC();
+	}
+	private JPanel getPanelAbajo() {
+		if (panelAbajo == null) {
+			panelAbajo = new JPanel();
+			panelAbajo.setLayout(new GridLayout(0, 3, 0, 0));
+			panelAbajo.add(getPanelFLOTA());
+			panelAbajo.add(getBtnTIENDA());
+			panelAbajo.add(getPanelARMAMENTO());
+		}
+		return panelAbajo;
+	}
+	private JPanel getPanelFLOTA() {
+		if (panelFLOTA == null) {
+			panelFLOTA = new JPanel();
+			panelFLOTA.setLayout(new GridLayout(0, 1, 0, 0));
+			panelFLOTA.add(getLblFLOTA());
+			panelFLOTA.add(getPanel());
+			panelFLOTA.add(getPanelBARCOS());
+			panelFLOTA.add(getLabel_1());
+		}
+		return panelFLOTA;
+	}
+	private JButton getBtnTIENDA() {
+		if (btnTIENDA == null) {
+			btnTIENDA = new JButton("TIENDA");
+			btnTIENDA.setBackground(Color.ORANGE);
+			btnTIENDA.setFont(new Font("Tahoma", Font.BOLD, 14));
+			btnTIENDA.setForeground(Color.BLACK);
+			
+		}
+		return btnTIENDA;
+	}
+	private JPanel getPanelArriba() {
+		if (panelArriba == null) {
+			panelArriba = new JPanel();
+			panelArriba.setLayout(new GridLayout(0, 2, 2, 2));
+			panelArriba.add(getLblJugador());
+			panelArriba.add(getLblPC());
+		}
+		return panelArriba;
+	}
+	private JLabel getLblJugador() {
+		if (lblJugador == null) {
+			lblJugador = new JLabel("TABLERO JUGADOR");
+			lblJugador.setForeground(Color.BLUE);
+			lblJugador.setHorizontalAlignment(SwingConstants.CENTER);
+			lblJugador.setFont(new Font("Tahoma", Font.BOLD, 25
+					));
+		}
+		return lblJugador;
+	}
+	private JLabel getLblPC() {
+		if (lblPC == null) {
+			lblPC = new JLabel("TABLERO PC");
+			lblPC.setForeground(Color.blue);
+			lblPC.setHorizontalAlignment(SwingConstants.CENTER);
+			lblPC.setFont(new Font("Tahoma", Font.BOLD, 25));
+		}
+		return lblPC;
+	}
+	private JLabel getLblFLOTA() {
+		if (lblFLOTA == null) {
+			lblFLOTA = new JLabel("FLOTA");
+			lblFLOTA.setForeground(Color.BLUE);
+			lblFLOTA.setHorizontalAlignment(SwingConstants.CENTER);
+			lblFLOTA.setFont(new Font("Tahoma", Font.BOLD, 15));
+		}
+		return lblFLOTA;
+	}
+	private JPanel getPanelARMAMENTO() {
+		if (panelARMAMENTO == null) {
+			panelARMAMENTO = new JPanel();
+			panelARMAMENTO.setLayout(new GridLayout(0, 1, 0, 0));
+			panelARMAMENTO.add(getLblARMAS());
+			panelARMAMENTO.add(getPanelARMAS());
+		}
+		return panelARMAMENTO;
+	}
+	private JLabel getLblARMAS() {
+		if (lblARMAS == null) {
+			lblARMAS = new JLabel("ARMAMENTO");
+			lblARMAS.setForeground(Color.BLUE);
+			lblARMAS.setHorizontalAlignment(SwingConstants.CENTER);
+			lblARMAS.setFont(new Font("Tahoma", Font.BOLD, 15));
+		}
+		return lblARMAS;
+	}
+	
+	
+	private JLabel cbt() 
+	{ //parámetros de entrada 
+		
+		JLabel btn = new JLabel(); //texto del botón
+		btn.setBorder(BorderFactory.createLineBorder(Color.white));
+		btn.setOpaque(true);
+		btn.setBackground(Color.darkGray);
+		return btn; 
+	}
+	
+		
+		public void crearCasillasJug() {
+			
+			//cremos el tablero con las casillas
+			for(int i=0; i<10;i++) {
+				for(int j=0; j<10;j++) {
+						
+					//creamos el label
+					JLabel btt = cbt();
+					
+					//añadimos los labels al panel
+					panelJUG.setLayout(new GridLayout(10, 10, 0, 0));
+					panelJUG.add(btt, BorderLayout.CENTER);
+					
+					
+					//accion al hacer clic
+					 btt.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+															
+								//cogemos el label clicado 
+								JLabel labelClicado = (JLabel) e.getComponent();
+																
+									if (labelClicado.getBackground().equals(Color.darkGray))
+									{labelClicado.setBackground(Color.blue);}
+								}}
+
+			);	}
+			}
+			}
+	
+		public void crearCasillasPC() {
+			
+			//cremos el tablero con las casillas
+			for(int i=0; i<10;i++) {
+				for(int j=0; j<10;j++) {
+																		
+					//creamos los labels y añadimos al panel
+					panelPC.setLayout(new GridLayout(10, 10, 0, 0));
+					panelPC.add(cbt(), BorderLayout.CENTER);
+					panelJUG.setLayout(new GridLayout(10, 10, 0, 0));
+					panelJUG.add(cbt(), BorderLayout.CENTER);
+					
+					//accion al hacer clic
+					 btt.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+															
+								//cogemos el label clicado 
+								JLabel labelClicado = (JLabel) e.getComponent();
+								
+								//conseguimos la coordenada del label clicado
+								int coord = listaPC.indexOf(labelClicado);
+								System.out.println("posicion array : " +coord);
+								
+									if (labelClicado.getBackground().equals(Color.darkGray))
+									{labelClicado.setBackground(Color.blue);}
+								}
+					 }
+
+				}
+			}
+		
+		}	
+		
+		
+		
+		
+	private JPanel getPanelBARCOS() {
+		if (panelBARCOS == null) {
+			panelBARCOS = new JPanel();
+			panelBARCOS.setLayout(new GridLayout(0, 2, 0, 0));
+			panelBARCOS.add(getLblNewLabel());
+			panelBARCOS.add(getLblNewLabel_1());
+			panelBARCOS.add(getLblNewLabel_2());
+			panelBARCOS.add(getLblNewLabel_3());
+			panelBARCOS.add(getLblNewLabel_4());
+			panelBARCOS.add(getLabel());
+		}
+		return panelBARCOS;
+	}
+	private JPanel getPanelARMAS() {
+		if (panelARMAS == null) {
+			panelARMAS = new JPanel();
+			panelARMAS.setLayout(new GridLayout(0, 2, 0, 0));
+			panelARMAS.add(getLblNewLabel_5());
+			panelARMAS.add(getLblNewLabel_6());
+			panelARMAS.add(getLblNewLabel_7());
+			panelARMAS.add(getLblNewLabel_8());
+			panelARMAS.add(getLblNewLabel_9());
+			panelARMAS.add(getLblNewLabel_10());
+		}
+		return panelARMAS;
+	}
+	private JLabel getLblNewLabel() {
+		if (lblNewLabel == null) {
+			lblNewLabel = new JLabel("New label");
+		}
+		return lblNewLabel;
+	}
+	private JLabel getLblNewLabel_1() {
+		if (lblNewLabel_1 == null) {
+			lblNewLabel_1 = new JLabel("New label");
+		}
+		return lblNewLabel_1;
+	}
+	private JLabel getLblNewLabel_2() {
+		if (lblNewLabel_2 == null) {
+			lblNewLabel_2 = new JLabel("New label");
+		}
+		return lblNewLabel_2;
+	}
+	private JLabel getLblNewLabel_3() {
+		if (lblNewLabel_3 == null) {
+			lblNewLabel_3 = new JLabel("New label");
+		}
+		return lblNewLabel_3;
+	}
+	private JLabel getLblNewLabel_4() {
+		if (lblNewLabel_4 == null) {
+			lblNewLabel_4 = new JLabel("New label");
+		}
+		return lblNewLabel_4;
+	}
+	private JLabel getLblNewLabel_5() {
+		if (lblNewLabel_5 == null) {
+			lblNewLabel_5 = new JLabel("New label");
+		}
+		return lblNewLabel_5;
+	}
+	private JLabel getLblNewLabel_6() {
+		if (lblNewLabel_6 == null) {
+			lblNewLabel_6 = new JLabel("New label");
+		}
+		return lblNewLabel_6;
+	}
+	private JLabel getLblNewLabel_7() {
+		if (lblNewLabel_7 == null) {
+			lblNewLabel_7 = new JLabel("New label");
+		}
+		return lblNewLabel_7;
+	}
+	private JLabel getLblNewLabel_8() {
+		if (lblNewLabel_8 == null) {
+			lblNewLabel_8 = new JLabel("New label");
+		}
+		return lblNewLabel_8;
+	}
+	private JLabel getLblNewLabel_9() {
+		if (lblNewLabel_9 == null) {
+			lblNewLabel_9 = new JLabel("New label");
+		}
+		return lblNewLabel_9;
+	}
+	private JPanel getPanelCENTRO() {
+		if (panelCENTRO == null) {
+			panelCENTRO = new JPanel();
+			panelCENTRO.setLayout(new GridLayout(0, 2, 0, 0));
+			panelCENTRO.add(getPanelJUG());
+			panelCENTRO.add(getPanelPC());
+		}
+		return panelCENTRO;
+	}
+	private JPanel getPanelJUG() {
+		if (panelJUG == null) {
+			panelJUG = new JPanel();
+		}
+		return panelJUG;
+	}
+	private JPanel getPanelPC() {
+		if (panelPC == null) {
+			panelPC = new JPanel();
+		}
+		return panelPC;
+	}
+	private JLabel getLabel() {
+		if (label == null) {
+			label = new JLabel("New label");
+		}
+		return label;
+	}
+	private JLabel getLblNewLabel_10() {
+		if (lblNewLabel_10 == null) {
+			lblNewLabel_10 = new JLabel("New label");
+		}
+		return lblNewLabel_10;
+	}
+	private JPanel getPanel() {
+		if (panel == null) {
+			panel = new JPanel();
+			panel.setLayout(new GridLayout(0, 2, 0, 0));
+			panel.add(getLblNewLabel_12());
+			panel.add(getLblNewLabel_11());
+		}
+		return panel;
+	}
+	private JLabel getLblNewLabel_11() {
+		if (lblNewLabel_11 == null) {
+			lblNewLabel_11 = new JLabel("CANTIDAD");
+		}
+		return lblNewLabel_11;
+	}
+	private JLabel getLabel_1() {
+		if (label_1 == null) {
+			label_1 = new JLabel("New label");
+		}
+		return label_1;
+	}
+	private JLabel getLblNewLabel_12() {
+		if (lblNewLabel_12 == null) {
+			lblNewLabel_12 = new JLabel("TIPO DE BARCO");
+		}
+		return lblNewLabel_12;
+	}
+}

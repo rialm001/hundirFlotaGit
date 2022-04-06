@@ -1,0 +1,18 @@
+package modeloHF;
+
+public class PC implements Jugador{
+
+	private Flota flotaPC;
+	private Tablero tableroPC;
+	private final int uniBarcosPC = 10;
+	
+	public PC() {
+		// TODO Esbozo de constructor generado automáticamente
+	}
+
+	
+	public void disparar() {
+	}
+	
+	
+}

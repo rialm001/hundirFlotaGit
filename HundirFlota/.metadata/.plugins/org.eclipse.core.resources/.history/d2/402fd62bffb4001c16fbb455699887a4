@@ -1,0 +1,17 @@
+package modeloHF;
+
+public class Radar extends Arma {
+	
+	
+	
+	
+	
+	
+	private void Radar()
+	{}
+	
+	
+	
+	
+
+}

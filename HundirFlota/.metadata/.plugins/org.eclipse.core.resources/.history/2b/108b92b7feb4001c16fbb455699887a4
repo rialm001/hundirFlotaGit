@@ -1,0 +1,15 @@
+package modeloHF;
+
+public class Portaaviones {
+	
+	
+	private static final int cant = 1;
+	private static final int longi = 4;
+	
+	
+	
+	
+	
+	
+
+}

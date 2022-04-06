@@ -1,0 +1,18 @@
+package modeloHF;
+
+public class Flota {
+
+	private ListaBarcos lBarcos;
+	private ListaArmas lArmas;
+	private int dinero;
+		
+	
+	public Flota() {
+		// TODO Esbozo de constructor generado automáticamente
+	}
+	
+	
+	private void addArma(Arma pArma)
+	{}
+
+}

@@ -1,0 +1,11 @@
+package modeloHF;
+
+public class Misil {
+
+	
+	private static final int cant = 2;
+	private static final int coste = 700;
+	private static final int unidEnTienda = 5;
+	
+	
+}

@@ -1,0 +1,27 @@
+package modeloHF;
+
+public class Arma {
+
+	private int coste;
+	private int cantidad;
+	private int unidEnTienda;
+	
+	
+	
+	private Arma()
+	{}
+	
+	public int getCoste()
+	{return this.coste;}
+	
+	public int getCantidad()
+	{return this.cantidad;}
+	
+	public int getUnidEnTienda()
+	{return this.unidEnTienda;}
+	
+	public void restarArma()
+	{unidEnTienda = unidEnTienda - 1;}
+	
+	
+}

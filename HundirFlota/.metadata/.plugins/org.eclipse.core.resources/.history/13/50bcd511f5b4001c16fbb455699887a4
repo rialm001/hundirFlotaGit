@@ -1,0 +1,48 @@
+package modeloHF;
+
+public class Casilla {
+	
+	
+	private int posicion;
+	private TipoEstado estado;
+	
+	private void Casilla()
+	{}
+	
+	public int getPosicion()
+	{return this.posicion;}
+	
+	public TipoEstado getEstado()
+	{return this.estado;}
+	
+	public void setEstado(TipoEstado pEstado)
+	{
+		estado = pEstado;
+		
+	}
+	
+	public boolean ocupada(Casilla pCas)
+	{
+		//
+		
+		if (pCas.getEstado().equals(estado.BARCO))
+		
+		{return true;}
+		else return false;
+		
+	}
+	
+	public boolean estaAtacada(Casilla pCasilla)
+	{
+		if(pCasilla.getEstado().equals(estado.TOCADO) || pCasilla.getEstado().equals(estado.HUNDIDO))
+		{return true;}
+		else return false;
+		
+	}
+	
+	
+	public void atacar(int pPos)
+	{}
+	
+	
+}

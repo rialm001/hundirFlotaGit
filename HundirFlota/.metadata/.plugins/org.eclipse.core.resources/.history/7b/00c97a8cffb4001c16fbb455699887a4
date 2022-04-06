@@ -1,0 +1,8 @@
+package modeloHF;
+
+public class Bomba {
+	
+	private static final int cant = 10;
+	private static final int coste = 200;
+	private static final int unidEnTienda = 20;
+}

@@ -1,0 +1,20 @@
+package modeloHF;
+
+public class Destructor {
+	
+	private static final int cant = 3;
+	private static final int longitud = 2;
+	private static final int costeReparacion = 2000;
+	
+	public int getLongitud()
+	{return this.longitud;}
+	
+	public int getCantidad()
+	{return this.cantidad;}
+	
+	public int getCosteReparar()
+	{return this.costeReparar;}
+	
+	
+
+}

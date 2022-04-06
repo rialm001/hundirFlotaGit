@@ -1,0 +1,21 @@
+package ppalHF;
+
+import modeloHF.GestorHF;
+import vistaHF.tiendaHF;
+import vistaHF.vistaTablero;
+	
+
+	public class principalHF {
+		public static void main(String[] args) {
+			
+			//MODELO//
+		
+			GestorHF.getGestorHF();
+			
+			//VISTA//
+			vistaTablero tab = new vistaTablero();
+			tiendaHF tien = new tiendaHF();
+		
+		}
+	}
+

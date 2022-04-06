@@ -1,0 +1,42 @@
+package modeloHF;
+
+import java.util.Observable;
+
+@SuppressWarnings("deprecation")
+public class GestorHF  extends Observable{
+		
+		private static GestorHF mGestorHF = new GestorHF();
+		
+		
+		private GestorHF ()
+		{
+					
+		
+			setChanged();
+			notifyObservers();
+			
+			//Mostrar información del modelo
+						
+		}
+		
+		public static GestorHF getGestorHF() {
+			return mGestorHF;
+		}
+		
+		public void actualizarNBarcos()
+		{
+			
+		}
+		
+		
+	/*	public void ponerVerde() {
+			if (!estaVerde()) {
+				cont = PERIODO;
+				estaVerde = true;
+				setChanged();
+				notifyObservers();
+			}
+		}*/
+		
+
+	}	

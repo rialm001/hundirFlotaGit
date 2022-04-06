@@ -1,0 +1,17 @@
+package modeloHF;
+
+public class Humano implements Jugador{
+
+	private Flota flotaH;
+	private Tablero tableroH;
+	public int contH;
+	
+	public Humano() {
+		// TODO Esbozo de constructor generado automáticamente
+	}
+
+	
+	public void disparar() {}
+	
+	
+}

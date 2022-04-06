@@ -1,0 +1,113 @@
+package vistaHF;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextPane;
+import javax.swing.UIManager;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+
+public class vistaPrincipal extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -817856513046636577L;
+	private JPanel contentPane;
+	private JPanel panelReglas;
+	private JButton btnJUGAR;
+	private JTextPane REGLAS;
+	private JLabel lblREGLAS;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					vistaPrincipal frame = new vistaPrincipal();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public vistaPrincipal() {
+		setTitle("\u00A1 BIENVENIDO A HUNDIR LA FLOTA !");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 615, 408);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new BorderLayout(0, 0));
+		contentPane.add(getPanelReglas(), BorderLayout.CENTER);
+		contentPane.add(getLblREGLAS(), BorderLayout.NORTH);
+		contentPane.add(getBtnJUGAR(), BorderLayout.SOUTH);
+	}
+
+	private JPanel getPanelReglas() {
+		if (panelReglas == null) {
+			panelReglas = new JPanel();
+			panelReglas.add(getREGLAS());
+		}
+		return panelReglas;
+	}
+	private JButton getBtnJUGAR() {
+		if (btnJUGAR == null) {
+			btnJUGAR = new JButton("\u00A1 A JUGAR !");
+		}
+		return btnJUGAR;
+	}
+
+	private JTextPane getREGLAS() {
+		if (REGLAS == null) {
+			REGLAS = new JTextPane();
+			REGLAS.setBackground(UIManager.getColor("Button.background"));
+			REGLAS.setText(" \r\n "
+					+ "1. El juego consiste en hundir la flota del contrincante. Para ello, debe colocar su propia\r\n"
+					+ "flota de forma estratégica y encontrar y hundir con los disparos la flota contraria.\r\n \r\n"
+					+ "2. Cada uno de los jugadores dispone de dos cuadrículas que ocultará al otro jugador: en\r\n"
+					+ "una debe colocar sus barcos y en la otra irá anotando los resultados de los disparos que\r\n"
+					+ "realiza en cada turno. En la página siguiente dispone de plantillas de las cuadrículas.\r\n"
+					+ "3. Cada jugador debe colocar en uno de los cuadros los siguientes barcos en posición\r\n"
+					+ "horizontal o vertical:\r\n"
+					+ "	· 1 barco que ocupa 4 cuadrados.\r\n"
+					+ "	· 2 barcos de tres cuadros\r\n"
+					+ "	· 3 barcos de 2 cuadros\r\n"
+					+ "	· 4 barcos de un solo cuadro\r\n"
+					+ "4. Los barcos se tienen que colocar respetando una franja de cuadros en blanco alrededor.\r\n"
+					+ "Sí pueden colocarse junto a los bordes de la cuadrícula, pero sin llegar a pegarse un\r\n"
+					+ "barco con otro.\r\n"
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					);
+		}
+		return REGLAS;
+	}
+	private JLabel getLblREGLAS() {
+		if (lblREGLAS == null) {
+			lblREGLAS = new JLabel("REGLAS DEL JUEGO");
+			lblREGLAS.setFont(new Font("Tahoma", Font.BOLD, 16));
+		}
+		return lblREGLAS;
+	}
+}

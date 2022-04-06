@@ -1,0 +1,54 @@
+package modeloHF;
+
+import java.util.Observable;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class GestorHF  extends Observable{
+		
+		private static GestorHF mGestorHF = new GestorHF();
+		
+		
+		private GestorHF ()
+		{
+					
+		
+			setChanged();
+			notifyObservers();
+			
+			//Mostrar información del modelo
+						
+		}
+		
+		public static GestorHF getGestorSemaforos() {
+			return mGestorHF;
+		}
+		
+
+		public int getContador() {
+			return cont;
+		}
+		
+		public boolean estaVerde() {
+			return estaVerde;
+		}
+		
+		public void ponerVerde() {
+			if (!estaVerde()) {
+				cont = PERIODO;
+				estaVerde = true;
+				setChanged();
+				notifyObservers();
+			}
+		}
+		
+
+	}	
+	
+	
+	
+	
+	
+	
+
+}

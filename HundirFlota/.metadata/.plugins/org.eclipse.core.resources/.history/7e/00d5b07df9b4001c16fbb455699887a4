@@ -1,0 +1,6 @@
+package modeloHF;
+
+public interface Jugador {
+	
+	void disparar();
+}

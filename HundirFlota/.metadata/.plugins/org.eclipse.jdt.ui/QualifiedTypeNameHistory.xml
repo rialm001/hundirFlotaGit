@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.swing.BorderFactory"/>
+    <fullyQualifiedTypeName name="java.awt.Dimension"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="java.awt.event.MouseAdapter"/>
+    <fullyQualifiedTypeName name="java.awt.event.MouseEvent"/>
+    <fullyQualifiedTypeName name="modeloHF.GestorHF"/>
+    <fullyQualifiedTypeName name="vistaHF.tableroHF"/>
+    <fullyQualifiedTypeName name="vistaHF.tiendaHF"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="modeloHF.HundirFlota"/>
+    <fullyQualifiedTypeName name="modeloHF.TipoEstado"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.Iterable"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="modeloHF.Portaaviones"/>
+</qualifiedTypeNameHistroy>
