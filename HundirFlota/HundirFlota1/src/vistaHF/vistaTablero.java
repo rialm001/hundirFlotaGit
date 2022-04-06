@@ -7,8 +7,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import modeloHF.Destructor;
+import modeloHF.Fragata;
 import modeloHF.GestorHF;
 import modeloHF.Portaaviones;
+import modeloHF.Submarino;
 
 import java.awt.GridLayout;
 import java.awt.Toolkit;
@@ -53,11 +57,11 @@ public class vistaTablero extends JFrame implements Observer {
 	private JPanel panelBARCOS;
 	private JButton PORTAAVIONES;
 	private JLabel nPORTA;
-	private JLabel SUBMARINO;
+	private JButton SUBMARINO;
 	private JLabel nSUB;
-	private JLabel DESTRUCTOR;
+	private JButton DESTRUCTOR;
 	private JLabel nDESTR;
-	private JLabel FRAGATA;
+	private JButton FRAGATA;
 	private JLabel nFRAG;
 	private JLabel DINERO;
 	private JLabel nDINERO;
@@ -247,6 +251,7 @@ public class vistaTablero extends JFrame implements Observer {
 			PORTAAVIONES = new JButton("PORTAAVIONES");
 			PORTAAVIONES.setHorizontalAlignment(SwingConstants.LEFT);
 			PORTAAVIONES.addActionListener(getControladorPorta());
+			//PORTAAVIONES.addActionListener(getControladorPorta());
 
 		}
 		return PORTAAVIONES;
@@ -254,43 +259,50 @@ public class vistaTablero extends JFrame implements Observer {
 	private JLabel getLabel_3() {
 		if (nPORTA == null) {
 			nPORTA = new JLabel(" " );
+			nPORTA.setHorizontalAlignment(SwingConstants.CENTER);
 			nPORTA.setText(""+Portaaviones.getCantidad());
 		}
 		return nPORTA;
 	}
-	private JLabel getSUBMARINO() {
+	private JButton getSUBMARINO() {
 		if (SUBMARINO == null) {
-			SUBMARINO = new JLabel("SUBMARINO");
+			SUBMARINO = new JButton("SUBMARINO");
 		}
 		return SUBMARINO;
 	}
 	private JLabel getNSUB() {
 		if (nSUB == null) {
 			nSUB = new JLabel("");
+			nSUB.setHorizontalAlignment(SwingConstants.CENTER);
+			nSUB.setText("" + Submarino.getCantidad());
 		}
 		return nSUB;
 	}
-	private JLabel getDESTRUCTOR() {
+	private JButton getDESTRUCTOR() {
 		if (DESTRUCTOR == null) {
-			DESTRUCTOR = new JLabel("DESTRUCTOR");
+			DESTRUCTOR = new JButton("DESTRUCTOR");
 		}
 		return DESTRUCTOR;
 	}
 	private JLabel getNDESTR() {
 		if (nDESTR == null) {
 			nDESTR = new JLabel("");
+			nDESTR.setHorizontalAlignment(SwingConstants.CENTER);
+			nDESTR.setText(""+Destructor.getCantidad());
 		}
 		return nDESTR;
 	}
-	private JLabel getFRAGATA() {
+	private JButton getFRAGATA() {
 		if (FRAGATA == null) {
-			FRAGATA = new JLabel("FRAGATA");
+			FRAGATA = new JButton("FRAGATA");
 		}
 		return FRAGATA;
 	}
 	private JLabel getNFRAG() {
 		if (nFRAG == null) {
 			nFRAG = new JLabel("");
+			nFRAG.setHorizontalAlignment(SwingConstants.CENTER);
+			nFRAG.setText(""+Fragata.getCantidad());
 		}
 		return nFRAG;
 	}

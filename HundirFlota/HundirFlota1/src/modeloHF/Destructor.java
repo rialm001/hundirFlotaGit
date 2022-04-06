@@ -9,8 +9,8 @@ public class Destructor {
 	public int getLongitud()
 	{return this.longitud;}
 	
-	public int getCantidad()
-	{return this.cantidad;}
+	public static int getCantidad()
+	{return cantidad;}
 	
 	public int getCosteReparar()
 	{return this.costeReparacion;}
